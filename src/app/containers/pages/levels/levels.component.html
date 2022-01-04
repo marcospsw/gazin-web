@@ -1,0 +1,38 @@
+<div class="container">
+  <div class="header-niveis">
+    <h1 class="title">Níveis</h1>
+
+    <form class="form" (ngSubmit)="this.handleCreateNivel(createNivel)" #createNivelForm="ngForm">
+      <div class="input-box">
+        <input
+          type="text"
+          placeholder="Nível"
+          class="input-field"
+          [(ngModel)]="createNivel"
+          name="nivel"
+          #textInput="ngModel"
+          required
+        />
+      </div>
+      <app-form-error *ngIf="textInput.invalid && textInput.touched" mensagem="Nível obrigatório!"></app-form-error>
+
+      <div class="submit-box">
+        <button class="submit-button" type="submit" [disabled]="createNivelForm.invalid">Create Nível</button>
+      </div>
+    </form>
+  </div>
+
+  <app-loading *ngIf="isLoading"></app-loading>
+  <table *ngIf="!isLoading && this.niveis.length > 0" class="niveis-table">
+    <tr class="niveis-table--title-row">
+      <th>Nível</th>
+      <th>Qnt. de Desenvolvedores</th>
+    </tr>
+    <tr class="niveis-table--row" *ngFor="let nivel of niveis">
+      <td class="niveis-table--row-link" (click)="this.goToUpdateLevel(nivel.id)">{{ nivel.nivel }}</td>
+      <td>{{ nivel.desenvolvedoresCount }}</td>
+      <td class="niveis-table--row-link" (click)="this.goToUpdateLevel(nivel.id)"><mat-icon>edit</mat-icon></td>
+      <td class="niveis-table--row-link" (click)="this.handleDeleteNivel(nivel.id)"><mat-icon>delete</mat-icon></td>
+    </tr>
+  </table>
+</div>

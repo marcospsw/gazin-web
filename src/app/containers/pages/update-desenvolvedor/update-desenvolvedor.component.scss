@@ -1,0 +1,65 @@
+@import 'includes.scss';
+
+.container {
+  min-height: 75vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 2rem 0;
+}
+
+.title {
+  font-size: 2.5rem;
+  text-shadow: 2px 2px $black;
+  margin-bottom: 2rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 2rem;
+  background-color: $blue-800;
+  padding: 2rem 2rem;
+  border-radius: 5px;
+  box-shadow: 1px 1px $black;
+}
+
+.input-box {
+  width: 100%;
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.input-field {
+  padding: 0.5rem;
+  border-radius: 5px;
+  width: 100%;
+  border: none;
+  border: 1px solid transparent;
+  box-shadow: 1px 1px $black;
+
+  &:focus {
+    border-color: $blue-300;
+  }
+}
+
+.submit-button {
+  margin-top: 2rem;
+  padding: 0.5rem 4rem;
+  border-radius: 5px;
+  border: none;
+  background-color: $blue-300;
+  transition: filter 0.2s;
+  color: white;
+  font-weight: $font-semi-bold;
+  text-shadow: 1px 1px $black;
+  box-shadow: 1px 1px $black;
+
+  &:hover {
+    filter: brightness(0.8);
+  }
+}

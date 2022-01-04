@@ -1,0 +1,154 @@
+@import 'includes.scss';
+
+.container {
+  min-height: 75vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 2rem 0;
+}
+
+.header-niveis {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.title {
+  font-size: 2.5rem;
+  background-color: $blue-800;
+  padding: 2rem 3rem;
+  border-radius: 0.3rem;
+  text-shadow: 2px 2px $black;
+  box-shadow: 1px 1px $black;
+  text-transform: capitalize;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 2rem;
+  background-color: $blue-800;
+  padding: 1rem;
+  border-radius: 5px;
+  box-shadow: 1px 1px $black;
+}
+
+.input-field {
+  padding: 0.5rem;
+  border-radius: 5px;
+  border: none;
+  width: 100%;
+  border: 1px solid transparent;
+  margin-bottom: 0.5rem;
+  box-shadow: 1px 1px $black;
+
+  &:focus {
+    border-color: $blue-300;
+  }
+}
+
+.submit-button {
+  padding: 0.5rem 4rem;
+  border-radius: 5px;
+  border: none;
+  background-color: $blue-300;
+  transition: filter 0.2s;
+  color: white;
+  font-weight: $font-semi-bold;
+  text-shadow: 1px 1px $black;
+  box-shadow: 1px 1px $black;
+
+  &:hover {
+    filter: brightness(0.8);
+  }
+}
+
+.niveis-table {
+  margin-top: 2rem;
+  padding: 2rem;
+  box-shadow: 1px 1px $black;
+  background-color: $blue-800;
+  border-radius: 5px;
+
+  &--title-row {
+    background-color: $blue-300;
+
+    th {
+      font-size: 1.5rem;
+      text-align: center;
+      text-shadow: 1px 2px $black;
+      padding: 1rem;
+      border-radius: 5px;
+      box-shadow: 1px 1px $black;
+    }
+  }
+
+  &--row {
+    background-color: $blue-300;
+
+    td {
+      font-size: 1.5rem;
+      font-weight: $font-semi-bold;
+      text-align: center;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      text-shadow: 1px 2px $black;
+      box-shadow: 1px 1px $black;
+      transition: filter 0.2s;
+    }
+
+    &-link {
+      text-transform: capitalize;
+    }
+
+    &-link:hover {
+      filter: brightness(0.7);
+      cursor: pointer;
+    }
+  }
+}
+
+.desenvolvedores-table {
+  margin-top: 2rem;
+  padding: 2rem;
+  box-shadow: 1px 1px $black;
+  background-color: $blue-800;
+  border-radius: 5px;
+
+  &--title-row {
+    background-color: $blue-300;
+
+    th {
+      font-size: 1.5rem;
+      text-align: center;
+      text-shadow: 1px 2px $black;
+      padding: 1rem;
+      border-radius: 5px;
+      box-shadow: 1px 1px $black;
+    }
+  }
+
+  &--row {
+    background-color: $blue-300;
+
+    td {
+      font-size: 1.5rem;
+      font-weight: $font-semi-bold;
+      text-align: center;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      text-shadow: 1px 2px $black;
+      box-shadow: 1px 1px $black;
+      transition: filter 0.2s;
+    }
+
+    &-nivel:hover {
+      filter: brightness(0.7);
+      cursor: pointer;
+    }
+  }
+}

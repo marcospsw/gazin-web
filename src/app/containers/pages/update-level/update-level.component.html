@@ -1,0 +1,47 @@
+<div class="container">
+  <div class="header-niveis" *ngIf="!isLoading">
+    <h1 class="title">Nível {{ this.nivel.nivel }}</h1>
+
+    <form class="form" (ngSubmit)="this.handleUpdateNivel(this.nivel.id, { nivel: updateNivel })" #loginForm="ngForm">
+      <div class="input-box">
+        <input
+          type="text"
+          placeholder="Update Nível"
+          class="input-field"
+          [(ngModel)]="updateNivel"
+          name="nivel"
+          #textInput="ngModel"
+          required
+        />
+      </div>
+
+      <div class="submit-box">
+        <button class="submit-button" type="submit">Update</button>
+      </div>
+    </form>
+  </div>
+
+  <table *ngIf="!isLoading" class="desenvolvedores-table">
+    <tr class="desenvolvedores-table--title-row">
+      <th>Nome</th>
+      <th>Data de Nascimento</th>
+      <th>Idade</th>
+      <th>Hobby</th>
+      <th>Sexo</th>
+    </tr>
+    <tr class="desenvolvedores-table--row" *ngFor="let desenvolvedor of desenvolvedores">
+      <td>{{ desenvolvedor.nome }}</td>
+      <td>{{ desenvolvedor.datanascimento }}</td>
+      <td>{{ desenvolvedor.idade }}</td>
+      <td>{{ desenvolvedor.hobby }}</td>
+      <td>{{ desenvolvedor.sexo }}</td>
+      <td class="niveis-table--row-link" (click)="this.handleDeleteDesenvolvedor(desenvolvedor.id)">
+        <mat-icon>edit</mat-icon>
+      </td>
+      <td class="niveis-table--row-link" (click)="this.handleDeleteDesenvolvedor(desenvolvedor.id)">
+        <mat-icon>delete</mat-icon>
+      </td>
+    </tr>
+  </table>
+  <app-loading *ngIf="isLoading"></app-loading>
+</div>

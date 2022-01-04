@@ -1,0 +1,19 @@
+@import 'includes.scss';
+
+.container {
+  height: 10vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-color: $blue-500;
+
+  a {
+    font-size: 1.2rem;
+    font-weight: $font-bold;
+    transition: color 0.3s;
+
+    &:hover {
+      color: $black;
+    }
+  }
+}

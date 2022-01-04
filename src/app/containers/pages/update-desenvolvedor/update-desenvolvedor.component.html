@@ -1,0 +1,74 @@
+<div class="container">
+  <div *ngIf="!isLoading">
+    <form class="form" [formGroup]="updateDevForm" (submit)="this.handleUpdateDesenvolvedor()">
+      <h1 class="title">Editar Desenvolvedor</h1>
+      <h1 class="title">{{ this.desenvolvedor.nome }}</h1>
+      <div class="input-box">
+        <input type="text" placeholder="Nome" class="input-field" formControlName="nome" name="nome" />
+        <app-form-error
+          *ngIf="updateDevForm.get('nome')?.errors?.['required'] && updateDevForm.get('nome')?.touched"
+          mensagem="Nome obrigatório!"
+        ></app-form-error>
+      </div>
+
+      <div class="input-box">
+        <select name="sexo" class="input-field" placeholder="Sexo" formControlName="sexo">
+          <option value="" selected disabled>Choose here</option>
+          <option value="male">Homem</option>
+          <option value="female">Mulher</option>
+          <option value="other">Outro</option>
+        </select>
+        <app-form-error
+          *ngIf="updateDevForm.get('sexo')?.errors?.['required'] && updateDevForm.get('sexo')?.touched"
+          mensagem="Sexo obrigatório!"
+        ></app-form-error>
+      </div>
+
+      <div class="input-box">
+        <input
+          type="date"
+          placeholder="Data de Nascimento"
+          class="input-field"
+          formControlName="datanascimento"
+          name="datanascimento"
+        />
+        <app-form-error
+          *ngIf="updateDevForm.get('datanascimento')?.errors?.['required'] && updateDevForm.get('datanascimento')?.touched"
+          mensagem="Data de Nascimento obrigatória!"
+        ></app-form-error>
+      </div>
+
+      <div class="input-box">
+        <input type="number" placeholder="Idade" class="input-field" formControlName="idade" name="idade" />
+        <app-form-error
+          *ngIf="updateDevForm.get('idade')?.errors?.['required'] && updateDevForm.get('idade')?.touched"
+          mensagem="Idade obrigatória!"
+        ></app-form-error>
+      </div>
+
+      <div class="input-box">
+        <input type="text" placeholder="Hobby" class="input-field" formControlName="hobby" name="hobby" />
+        <app-form-error
+          *ngIf="updateDevForm.get('hobby')?.errors?.['required'] && updateDevForm.get('hobby')?.touched"
+          mensagem="Hobby obrigatório!"
+        ></app-form-error>
+      </div>
+
+      <div class="input-box">
+        <select name="nivel_id" class="input-field" placeholder="Nivel" formControlName="nivel_id">
+          <option value="" selected disabled>Nível</option>
+          <option [value]="nivel.id" *ngFor="let nivel of niveis">{{ nivel.nivel }}</option>
+        </select>
+        <app-form-error
+          *ngIf="updateDevForm.get('nivel_id')?.errors?.['required'] && updateDevForm.get('nivel_id')?.touched"
+          mensagem="Nivel obrigatório!"
+        ></app-form-error>
+      </div>
+
+      <div class="submit-box">
+        <button class="submit-button" type="submit" [disabled]="updateDevForm.invalid">Editar Desenvolvedor</button>
+      </div>
+    </form>
+  </div>
+  <app-loading *ngIf="isLoading"></app-loading>
+</div>

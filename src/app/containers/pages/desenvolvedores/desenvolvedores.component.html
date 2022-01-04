@@ -1,0 +1,35 @@
+<div class="container">
+  <div class="header-devs">
+    <h1 class="title">Desenvolvedores</h1>
+    <div class="button-box">
+      <button class="button" type="submit" (click)="this.goToCreateDesenvolvedor()">Create</button>
+    </div>
+  </div>
+
+  <table *ngIf="this.desenvolvedores.length > 0" class="desenvolvedores-table">
+    <tr class="desenvolvedores-table--title-row">
+      <th>Nome</th>
+      <th>Nível</th>
+      <th>Data de Nascimento</th>
+      <th>Idade</th>
+      <th>Hobby</th>
+      <th>Sexo</th>
+    </tr>
+    <tr class="desenvolvedores-table--row" *ngFor="let desenvolvedor of desenvolvedores">
+      <td class="desenvolvedores-table--row-link" (click)="this.goToUpdateDev(desenvolvedor.id)">
+        {{ desenvolvedor.nome }}
+      </td>
+      <td>{{ desenvolvedor.nivel.nivel }}</td>
+      <td>{{ formatDate(desenvolvedor.datanascimento) }}</td>
+      <td>{{ desenvolvedor.idade }}</td>
+      <td>{{ desenvolvedor.hobby }}</td>
+      <td>{{ desenvolvedor.sexo }}</td>
+      <td class="desenvolvedores-table--row-link" (click)="this.goToUpdateDev(desenvolvedor.id)">
+        <mat-icon>edit</mat-icon>
+      </td>
+      <td class="desenvolvedores-table--row-link" (click)="this.handleDeleteDesenvolvedor(desenvolvedor.id)">
+        <mat-icon>delete</mat-icon>
+      </td>
+    </tr>
+  </table>
+</div>
